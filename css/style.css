@@ -1,7 +1,7 @@
 /* Global Styles */
 :root {
     /* Light theme variables */
-    --primary-color: #007bff;
+    --primary-color: #000000;
     --bg-color: #ffffff;
     --text-color: #333333;
     --card-bg: #ffffff;
@@ -19,7 +19,7 @@
 
 [data-theme="dark"] {
     /* Dark theme variables */
-    --primary-color: #4a9eff;
+    --primary-color: #ffffff;
     --bg-color: #1a1a1a;
     --bg-color-alt: #1a1a1a;
     --text-color: #ffffff;
@@ -69,6 +69,23 @@ body {
 
 .nav-link:hover {
     color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .navbar {
+    background-color: #ffffff; /* White background for navbar */
+}
+
+[data-theme="dark"] .navbar-nav .nav-link {
+    color: #000000; /* Black text for nav links */
+}
+
+[data-theme="dark"] .navbar-toggler {
+    background-color: transparent; /* Make background transparent */
+    border-color: white; /* Change border color to white */
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="white" height="30" width="30" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E'); /* Change icon color to white */
 }
 
 /* Section Styles */
@@ -198,9 +215,13 @@ body {
 }
 
 .about-intro .lead {
-    color: #444;
+    color: #000000;
     line-height: 1.8;
     font-size: 1.1rem;
+}
+
+[data-theme="dark"] .lead {
+    color: white;
 }
 
 .education-item {
@@ -215,6 +236,10 @@ body {
     color: white;
     border-radius: 20px;
     font-size: 14px;
+}
+
+[data-theme="dark"] .skill-tag {
+    color: black;
 }
 
 /* Projects Section */
@@ -399,10 +424,6 @@ body {
     margin-bottom: 10px;
 }
 
-.cert-details .btn {
-    margin-top: auto;
-}
-
 .cert-info {
     list-style: none;
     padding: 0;
@@ -567,6 +588,10 @@ body {
     font-weight: 500;
 }
 
+[data-theme="dark"] .award-badge {
+    color: black;
+}
+
 .award-venue {
     color: var(--text-color);
     opacity: 0.8;
@@ -636,6 +661,10 @@ body {
 
 .volunteer-item span {
     color: #444;
+}
+
+[data-theme="dark"] .achievement-card span {
+    color: white;
 }
 
 /* Contact Section */
@@ -860,6 +889,14 @@ body {
     .section-padding {
         padding: 60px 0;
     }
+    
+    [data-theme="dark"] .navbar {
+        background-color: white; /* White background for navbar */
+    }
+    
+    [data-theme="dark"] .navbar-nav .nav-link {
+        color: black; /* Black text for nav links */
+    }
 }
 
 /* Animations */
@@ -870,6 +907,38 @@ body {
 
 .fade-in {
     animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0; /* Start hidden */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0; /* Start hidden */
 }
 
 #theme-toggle {
